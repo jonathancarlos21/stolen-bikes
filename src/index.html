@@ -2,18 +2,18 @@
 <html>
   <head>
     <script src="http://code.jquery.com/jquery-3.2.1.min.js" integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4=" crossorigin="anonymous"></script>
-    <script type="text/javascript" src="weather-interface.js"></script>
-    <title>Weather</title>
+    <!-- <script type="text/javascript" src="bikes.js"></script> -->
+    <title>Stolen Bikes</title>
   </head>
   <body>
     <div class="container">
-      <h1>Get Weather Conditions From Anywhere!</h1>
-      <label for="location">Enter a location:</label>
+      <h1>Find Stolen Bikes By Location!</h1>
+      <label for="location">Enter a City and State:</label>
       <input id="location" type="text">
-      <button class="btn-success" id="weatherLocation">Get Current Temperature and Humidity</button>
+      <button class="btn-success" id="bikeLocation">Get Bike Manufacturer Name and Date Stolen:</button>
       <div class="errors"></div>
-      <div class="showHumidity"></div>
-      <div class="showTemp"></div>
+      <div class="showManName"></div>
+      <div class="showDateStolen"></div>
     </div>
   </body>
 </html>
