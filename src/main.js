@@ -8,11 +8,15 @@ import { BikeIndex } from './../src/bikes-service.js';
 $(document).ready(function() {
   $('#bikeLocation').click(function() {
     const location = $('#location').val();
+    const year = parseInt($('#year').val());
     $('#location').val("");
+    $('#year').val("");
+    console.log(year);
+
     
     (async () => {
       let bikeSearch = new BikeIndex();
-      const response = await bikeSearch.findBikeByLocation(location);
+      const response = await bikeSearch.findBikes(year, location);
       getElements(response);
       
     })();
@@ -22,7 +26,7 @@ $(document).ready(function() {
       let bikeNameArray = [];
       let bikeDescArray = [];
       let bikeFrameArray = [];
-      console.log(bikeArray.bikes[0].manufacturer_name);
+      console.log(bikeArray.bikes);
       
       bikeArray.bikes.forEach(function(bike) {
         bikeNameArray.push(bike.manufacturer_name);
@@ -31,8 +35,9 @@ $(document).ready(function() {
       }); 
 
 
-      for (let i=0; i<=25; i++) {
+      for (let i=0; i<bikeNameArray.length; i++) {
         $('.showManName').append("<li>" + "Manufacturer: " + bikeNameArray[i] + "</li>");
+
         
       }
     }
